@@ -22,11 +22,10 @@ class tallyo extends Component {
           source={require('./images/Bg.png')}
           style={{ flex:1, width: null, height: null, margin: 20}}
         />
-        {/*<View style={styles.circle}></View>*/}
-        {/*<Text style={styles.welcome}>
-          Welcome to React Native!
-          </Text>
-          <Text style={styles.instructions}>
+        <Text style={styles.welcome}>
+          tallyo
+        </Text>
+        {/*<Text style={styles.instructions}>
           To get started, edit index.ios.js
           </Text>
           <Text style={styles.instructions}>
@@ -50,19 +49,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    position: 'relative',
+    color: 'white'
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
   },
-  circle: {
-    resizeMode: 'contain'
-    // height: 100,
-    // width: 100,
-    // borderRadius: 300,
-    // backgroundColor: '#31ACB6',
-  }
+
 });
 
 AppRegistry.registerComponent('tallyo', () => tallyo);
