@@ -6,7 +6,9 @@ import {
   View,
   Image,
   StatusBar,
-  Dimensions
+  Dimensions,
+  TouchableOpacity,
+  TextInput
 } from 'react-native';
 
 class tallyo extends Component {
@@ -27,21 +29,26 @@ class tallyo extends Component {
             <Text style={styles.num}>
               0
             </Text>
-            <Text style={styles.text}>
-              tallyo
-            </Text>
+            <TextInput style={styles.text} placeholder='name your tallyo'/>
+
 
           </View>
         </Image>
         <View style={styles.bottom}>
-          <Image
-            source={require('./images/minus.png')}
-            style={styles.minus}
-          />
-          <Image
-            source={require('./images/plus.png')}
-            style={styles.plus}
-          />
+          <TouchableOpacity onPress={this._onPressButton}>
+
+            <Image
+              source={require('./images/minus.png')}
+              style={styles.minus}
+            />
+          </TouchableOpacity>
+
+            <TouchableOpacity onPress={this._onPressButton}>
+              <Image
+                source={require('./images/plus.png')}
+                style={styles.plus}
+              />
+            </TouchableOpacity>
 
         </View>
 
@@ -73,7 +80,8 @@ const styles = StyleSheet.create({
     color: 'white',
     letterSpacing: 3,
     opacity: 0.7,
-    marginTop: -20
+    marginTop: -20,
+    height: 40
   },
   instructions: {
     textAlign: 'center',
