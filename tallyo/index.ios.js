@@ -11,7 +11,22 @@ import {
   TextInput
 } from 'react-native';
 
-class tallyo extends Component {
+var tallyo = React.createClass( {
+  getInitialState() {
+    return ({
+      counter: 0
+    });
+  },
+  plusClicked: function(){
+    this.setState({
+      counter: this.state.counter + 1
+    });
+  },
+  minusClicked: function(){
+    this.setState({
+      counter: this.state.counter - 1
+    });
+  },
   render() {
     return (
       <View style={styles.container}>
@@ -27,7 +42,7 @@ class tallyo extends Component {
         >
           <View style={styles.backdropView}>
             <Text style={styles.num}>
-              0
+              {this.state.counter}
             </Text>
             <TextInput style={styles.text} placeholder='name your tallyo'/>
 
@@ -35,7 +50,7 @@ class tallyo extends Component {
           </View>
         </Image>
         <View style={styles.bottom}>
-          <TouchableOpacity onPress={this._onPressButton}>
+          <TouchableOpacity onPress={this.minusClicked}>
 
             <Image
               source={require('./images/minus.png')}
@@ -43,7 +58,7 @@ class tallyo extends Component {
             />
           </TouchableOpacity>
 
-            <TouchableOpacity onPress={this._onPressButton}>
+          <TouchableOpacity onPress={this.plusClicked}>
               <Image
                 source={require('./images/plus.png')}
                 style={styles.plus}
@@ -56,7 +71,7 @@ class tallyo extends Component {
       </View>
     );
   }
-}
+})
 
 const styles = StyleSheet.create({
   container: {
@@ -67,7 +82,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#032529',
   },
   num: {
-    fontSize: 180,
+    fontSize: 140,
     textAlign: 'center',
     margin: 10,
     position: 'relative',
@@ -92,7 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 200,
-    width: 200,
+    width: 300,
     backgroundColor: 'rgba(0,0,0,0)',
   },
   bigCircle: {
