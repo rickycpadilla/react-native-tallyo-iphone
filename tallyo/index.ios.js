@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -11,7 +5,8 @@ import {
   Text,
   View,
   Image,
-  StatusBar
+  StatusBar,
+  Dimensions
 } from 'react-native';
 
 class tallyo extends Component {
@@ -26,9 +21,7 @@ class tallyo extends Component {
         <Image
           resizeMode="contain"
           source={require('./images/Bg.png')}
-          style={{ flex:1, width: null, height: null, margin: 20,
-            justifyContent: 'center',
-          alignItems: 'center',}}
+          style={styles.bigCircle}
         >
           <View style={styles.backdropView}>
             <Text style={styles.num}>
@@ -40,6 +33,18 @@ class tallyo extends Component {
 
           </View>
         </Image>
+        <View style={styles.bottom}>
+          <Image
+            source={require('./images/minus.png')}
+            style={styles.minus}
+          />
+          <Image
+            source={require('./images/plus.png')}
+            style={styles.plus}
+          />
+
+        </View>
+
 
       </View>
     );
@@ -67,7 +72,8 @@ const styles = StyleSheet.create({
     position: 'relative',
     color: 'white',
     letterSpacing: 3,
-    opacity: 0.7
+    opacity: 0.7,
+    marginTop: -20
   },
   instructions: {
     textAlign: 'center',
@@ -81,7 +87,32 @@ const styles = StyleSheet.create({
     width: 200,
     backgroundColor: 'rgba(0,0,0,0)',
   },
-
+  bigCircle: {
+    flex:1,
+    width: null,
+    height: null,
+    margin: 20,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  minus: {
+    width: 50,
+    height: 50,
+    margin: 20,
+    opacity: 0.7,
+    alignItems: 'flex-start'
+  },
+  plus: {
+    width: 50,
+    height: 50,
+    margin: 20,
+    opacity: 0.7,
+    alignItems: 'flex-end'
+  },
+  bottom: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  }
 });
 
 AppRegistry.registerComponent('tallyo', () => tallyo);
