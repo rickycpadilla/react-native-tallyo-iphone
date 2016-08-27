@@ -8,7 +8,7 @@ import {
   StatusBar,
   Dimensions,
   TouchableOpacity,
-  TextInput
+  TextInput,
 } from 'react-native';
 
 var tallyo = React.createClass( {
@@ -20,12 +20,12 @@ var tallyo = React.createClass( {
   plusClicked: function(){
     this.setState({
       counter: this.state.counter + 1
-    });
+    })
   },
   minusClicked: function(){
     this.setState({
       counter: this.state.counter - 1
-    });
+    })
   },
   render() {
     return (
